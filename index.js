@@ -210,17 +210,17 @@ function renderAllPizzas() {
         toppingsList.className = 'toppingsList'
         let toppingsP = document.createElement('p')
         toppingsP.innerText = 'Toppings: '
-        e.toppings.forEach((e) => {
-            toppingsP.innerText += (e + ', ')
-        })
+        toppingsP.innerText += e.toppings.join()
         let deleteBtnCon = document.createElement('div')
         deleteBtnCon.className = 'deleteBtnCon'
         let deleteBtn = document.createElement('button')
         deleteBtn.innerText = 'X'
         deleteBtn.className = 'deleteBtn'
         deleteBtn.addEventListener('click', () => {
-            deleteItem(array, index, singleItemCon)
-            sessionStorage.setItem('savedPizzas', JSON.stringify(pizzaObjArr))
+            if (confirm('are you sure want to delete this pizza?')) {
+                deleteItem(array, index, singleItemCon)
+                sessionStorage.setItem('savedPizzas', JSON.stringify(pizzaObjArr))
+            }
         })
         imgWrapper.append(pizzaImg)
         heatIndicatorCon.append(heatImg)
@@ -263,13 +263,13 @@ submitForm.addEventListener('submit', (e) => {
 
     const entry = {
         name: name,
-        price: price,
+        price: Number(price).toFixed(2),
         heat: heatLevel,
         toppings: toppings,
         image: selectedPizzaImg
     }
 
-    if (name !== '' && name.length <= 30 && price !== '' && price.length <= 2 &&
+    if (name !== '' && name.length <= 30 && price !== '' &&
         Number(price) > 0 && toppings.length >= 2) {
 
     pizzaObjArr.push(entry)
