@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="styles.css">
+<script src="index.js" defer></script>
+<head>
+    <meta charset="UTF-8">
+    <title>VISMA task</title>
+</head>
+<body>
+<header>
+
+</header>
+<main>
+    <div class="wrapper">
+        <form id="form">
+            <label for="name">Enter pizza name:</label>
+            <input maxlength="30" id="name" placeholder="name" type="text">
+            <label  for="price">Please enter price:</label>
+            <input maxlength="2" oninput="this.value=this.value.slice(0,this.maxLength)" id="price" placeholder="price" type="number">
+            <div class="selectedHeat">
+                <h3>Choose heat: </h3>
+                <div id="showHeat">
+                    <h3 class="heatNumber">1</h3>
+                </div>
+            </div>
+            <div class="heatBtnCon">
+                <button id="lightHeat" class="heatBtn">
+                    <img class="chilliIcon" src="./images/chilli-light.png" alt="">
+                </button>
+                <button id="mediumHeat" class="heatBtn">
+                    <img class="chilliIcon" src="./images/chilli-medium.png" alt="">
+                </button>
+                <button id="heavyHeat" class="heatBtn">
+                    <img class="chilliIcon" src="./images/chilli-hot.png" alt="">
+                </button>
+            </div>
+            <label for="toppings">Add toppings:</label>
+            <span>(At least 2 toppings required)</span>
+            <div class="toppingInput">
+                <input id="toppings" placeholder="Enter topping" type="text">
+                <button id="addTopping">Add topping</button>
+            </div>
+            <div id="addedToppings" class="windowForToppings"></div>
+            <p class="select-image-text">Please select the image</p>
+            <div class="imageSelectionCon" id="imageSelection"></div>
+            <div id="selectedImageCon">
+                <img class="selectedImage" src="https://americanpizza.lt/img/picos/manhatano.png" alt="">
+            </div>
+            <div id="fillAllFields"></div>
+            <button id="enterBtn" type="submit">Enter pizza</button>
+        </form>
+
+        <div class="sort-options-con">
+            <h3>Sort by</h3>
+            <button id="sort-A-Z">name</button>
+            <button id="sort-price">price</button>
+            <button id="sort-heat">heat</button>
+        </div>
+        <p class="pizza-menu">Pizza menu</p>
+        <div class="menu" id="menu">
+        </div>
+    </div>
+</main>
+<footer>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    font-family: 'Changa One', cursive;
+}
+
+#form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0 80px;
+}
+.selectedImage {
+    max-height: 100%;
+}
+#selectedImageCon {
+    height: 200px;
+}
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+#form {
+    max-width: 100%;
+}
+.toppingInput {
+    display: flex;
+    flex-direction: column;
+}
+.windowForToppings {
+    width: 300px;
+}
+.imageSelectionCon {
+    margin: 20px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.pizza-img {
+    width: 200px;
+    height: 200px;
+}
+.singleItemCon {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px;
+    border: solid 1px #42b983;
+    border-radius: 10px;
+    width: 100%;
+}
+.pizzaDescriptionCon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.pizzaDescriptionCon p {
+    padding: 10px;
+}
+.heatIndicatorCon {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.chilliIcon {
+    width: 35px;
+}
+.pizzaFormImg {
+    height: 80px;
+    width: 80px;
+    margin: 10px;
+    cursor: pointer;
+}
+.pizzaFormImg:hover {
+    transform: scale(1.03);
+}
+.heatBtn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: white;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid white;
+}
+.heatBtn:hover {
+    border: 2px solid #31946b;
+}
+.heatBtn:active {
+    transform: scale(0.90);
+}
+.heatBtnCon {
+    display: flex;
+    align-items: center;
+}
+.selectedHeat {
+    text-align: center;
+}
+.singleTopping {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.leftSidePizzaItemWrapper {
+    display: flex;
+    align-items: center;
+}
+.delBtnCon {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.deleteBtn {
+    cursor: pointer;
+    border: none;
+    padding: 0 5px 5px 5px;
+    background-color: white;
+    font-size: 25px;
+    font-weight: bold;
+    position: relative;
+    left: 0;
+}
+.deleteBtn:active {
+    transform: scale(0.92);
+}
+.deleteBtn:hover {
+    color: #42b983;
+}
+.select-image-text {
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 30px;
+    border-bottom: solid 1px black;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.sort-options-con {
+    text-align: center;
+}
+.selectedItem {
+    border: solid 1px #42b983;
+}
+.pizza-menu {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 20px 0 50px;
+}
+#fillAllFields {
+    height: 80px;
+}
+.error {
+    margin: 5px;
+    padding: 5px;
+    border-bottom: solid 2px crimson;
+}
+.heatNumber {
+    border-radius: 5px;
+    background-color: #42b983;
+}
+
+/* GLOBAL */
+
+input {
+    border: none;
+    border-bottom: solid 1px black;
+    outline: none;
+    padding: 10px;
+    margin: 10px;
+}
+button {
+    cursor: pointer;
+    background-color: #42b983;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+button:hover {
+    color: white;
+}
+button:active {
+    transform: scale(0.95);
+}
+@media only screen and (max-width: 480px) {
+    .singleItemCon {
+        flex-direction: column;
+    }
+}
