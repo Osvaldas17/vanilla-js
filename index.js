@@ -171,7 +171,6 @@ function sortByName(arr) {
 
 function sortByPrice(arr) {
     sortPriceOrder = !sortPriceOrder
-    console.log(sortPriceOrder)
     arr.sort((x, y) => {
         return (sortPriceOrder ? y.price - x.price : x.price - y.price)
     });
@@ -273,7 +272,6 @@ submitForm.addEventListener('submit', (e) => {
     if (name !== '' && name.length <= 30 && price !== '' && price.length <= 2 &&
         Number(price) > 0 && toppings.length >= 2) {
 
-    console.log('toppings', toppings)
     pizzaObjArr.push(entry)
     nameInput.value = ''
     priceInput.value = ''
