@@ -92,13 +92,13 @@ sortPrice.addEventListener('click', () => {
 sortAZ.addEventListener('click', () => {
     sortByName(pizzaObjArr)
 })
-sortHeat.addEventListener('click',() => {
+sortHeat.addEventListener('click', () => {
     sortByHeat(pizzaObjArr)
 })
 
-function pleaseFillAllFields() {
+function pleaseFillAllFields(text) {
     const p = document.createElement('p')
-    p.textContent = 'Please make sure all fields are correct'
+    p.textContent = text
     p.className = 'error'
     const fillAllDiv = document.querySelector('#fillAllFields')
     fillAllDiv.append(p)
@@ -269,17 +269,18 @@ submitForm.addEventListener('submit', (e) => {
         image: selectedPizzaImg
     }
 
-    if (name !== '' && name.length <= 30 && price !== '' &&
+    if (pizzaObjArr.find((e) => e.name === name)) {
+        pleaseFillAllFields('Name already exists')
+    } else if (name !== '' && name.length <= 30 && price !== '' &&
         Number(price) > 0 && toppings.length >= 2) {
-
-    pizzaObjArr.push(entry)
-    nameInput.value = ''
-    priceInput.value = ''
-    heatLevel = ''
-    toppings = []
-    renderAddedToppings()
+        pizzaObjArr.push(entry)
+        nameInput.value = ''
+        priceInput.value = ''
+        heatLevel = ''
+        toppings = []
+        renderAddedToppings()
     } else {
-        pleaseFillAllFields()
+        pleaseFillAllFields('Please make sure all fields are correct')
     }
     renderAllPizzas()
     sessionStorage.setItem('savedPizzas', JSON.stringify(pizzaObjArr))
